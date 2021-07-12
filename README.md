@@ -89,13 +89,7 @@ MediaPipe has been successfully connected and is working properly
 We will recognize gestures according to the following logic:
 There are 21 key points in total, with 4 points on each finger (see Figure 19). For example, consider the index finger. The fourth point is 8, the second point is 6. If the "y" coordinate of point 8 is less than that of point 6, the finger is raised up. Accordingly, if the "y" coordinate of point 8 is greater than that of point 6 – the finger is not raised up. This method works with all fingers except the thumb. Here you should look at the changes in the "x" coordinate.
 # ![Picture4](https://github.com/KudinovIvan/HandTracks/blob/ver1.0/assets/Picture4.png)
-Following this logic, you can recognize different gestures. Examples are given in the table.
-| Logic | Gesture |
-|----:|:----------|
-|All fingers are raised up, the thumb is pressed out||xx|
-|The index finger is raised up, the other fingers are pressed down||xx|
-|All fingers are pressed down||x|
-|Прижаты только средний и безымянный пальцы||xc|
+Following this logic, you can recognize different gestures.
 Let's try this algorithm in our work. Let's create conditions when the index finger is raised or the thumb is pressed. The corresponding message will be displayed in the console.
 ```python
   if len(lm List) != 0:
